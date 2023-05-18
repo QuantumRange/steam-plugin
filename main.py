@@ -2,7 +2,10 @@ import json
 
 import quart
 import quart_cors
-from quart import request
+from quart import jsonify
+# from quart import request
+import requests
+import json
 
 app = quart_cors.cors(quart.Quart(__name__), allow_origin="https://chat.openai.com")
 
@@ -48,6 +51,41 @@ app = quart_cors.cors(quart.Quart(__name__), allow_origin="https://chat.openai.c
 #     with open("openapi.yaml") as f:
 #         text = f.read()
 #         return quart.Response(text, mimetype="text/yaml")
+
+
+def get_game_details(appid):
+    url = f"https://store.steampowered.com/api/appdetails?appids={appid}"
+    response = requests.get(url)
+    if response.status_code == 200:
+        data = json.loads(response.text)
+        return data
+    else:
+        return {"error": "Could not retrieve game details"}
+
+@app.get("/game/<int:id>")
+async def get_game(id):
+    game_data = get_game_details(id)
+
+    print(game_data)
+
+    if 'error' not in game_data:
+        app_details = game_data[str(id)]['data']
+        mapped_data = {
+            "steam_appid": app_details['steam_appid'],
+            "name": app_details['name'],
+            "categories": app_details['categories'],
+            "developers": app_details['developers'],
+            "publishers": app_details['publishers'],
+            "platforms": app_details['platforms'],
+            "price_overview": app_details['price_overview'],
+            "demos": app_details['demos'],
+            "genres": app_details['genres'],
+            "recommendations": app_details['recommendations'],
+            "achievements": app_details['achievements'],
+        }
+        return jsonify(mapped_data)
+    else:
+        return jsonify(game_data)
 
 def main():
     app.run(debug=True, host="0.0.0.0", port=5003)
