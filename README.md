@@ -1,5 +1,9 @@
 # Steam Plugin
 
+**This project is unofficial and not from Steam.**
+
+**! In development... !**
+
 This plugin helps gpt users to find new games to play or get information about a game.
 
 ## Features
@@ -8,3 +12,4 @@ This plugin helps gpt users to find new games to play or get information about a
   - name `/search/name/[name]`
   - tags `/search/tags/[tags]`
   - genres `/search/genres/[genres]`
+
