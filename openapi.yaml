@@ -1,93 +1,185 @@
 openapi: 3.0.1
 info:
-  title: TODO Plugin
-  description: A plugin that allows the user to create and manage a TODO list using ChatGPT. If you do not know the user's username, ask them first before making queries to the plugin. Otherwise, use the username "global".
+  title: Steam Plugin
+  description: A plugin that allows to search for games and see information about a game.
   version: 'v1'
 servers:
   - url: http://localhost:5003
 paths:
-  /todos/{username}:
+  /game/{id}:
     get:
-      operationId: getTodos
-      summary: Get the list of todos
+      operationId: getGame
+      summary: Returns information about a game
       parameters:
       - in: path
-        name: username
+        name: id
         schema:
-            type: string
+            type: integer
         required: true
-        description: The name of the user.
+        description: The steam game id
       responses:
         "200":
           description: OK
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/getTodosResponse'
-    post:
-      operationId: addTodo
-      summary: Add a todo to the list
+                $ref: '#/components/schemas/game'
+  /search/name/{name}:
+    get:
+      operationId: searchByName
+      summary: Returns the ids of matching games
       parameters:
       - in: path
-        name: username
+        name: name
         schema:
             type: string
         required: true
-        description: The name of the user.
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/addTodoRequest'
+        description: The Steam game name
       responses:
         "200":
           description: OK
-    delete:
-      operationId: deleteTodo
-      summary: Delete a todo from the list
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/gameResults'
+  /search/tags/{tags}:
+    get:
+      operationId: searchByTags
+      summary: Returns the ids of matching games
       parameters:
       - in: path
-        name: username
+        name: tags
         schema:
             type: string
         required: true
-        description: The name of the user.
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/deleteTodoRequest'
+        description: Steam game tags
       responses:
         "200":
           description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/gameResults'
+  /search/genres/{genres}:
+    get:
+      operationId: searchByGenres
+      summary: Returns the ids of matching games
+      parameters:
+      - in: path
+        name: genres
+        schema:
+            type: string
+        required: true
+        description: Steam genres
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/gameResults'
 
 components:
   schemas:
-    getTodosResponse:
+    game:
       type: object
       properties:
-        todos:
+        steam_appid:
+          type: integer
+          description: The ID of the game on Steam.
+        name:
+          type: string
+          description: The name of the game.
+        developers:
           type: array
           items:
             type: string
-          description: The list of todos.
-    addTodoRequest:
+          description: The developers of the game.
+        publishers:
+          type: array
+          items:
+            type: string
+          description: The publishers of the game.
+        platforms:
+          type: object
+          properties:
+            windows:
+              type: boolean
+            mac:
+              type: boolean
+            linux:
+              type: boolean
+          description: The platforms the game is available on.
+        price_overview:
+          type: object
+          properties:
+            currency:
+              type: string
+            initial:
+              type: integer
+            final:
+              type: integer
+            discount_percent:
+              type: integer
+          description: Overview of the game's price.
+        demos:
+          type: array
+          items:
+            type: object
+            properties:
+              appid:
+                type: integer
+              description:
+                type: string
+          description: Available demos of the game.
+        genres:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+              description:
+                type: string
+          description: Genres of the game.
+        recommendations:
+          type: object
+          properties:
+            total:
+              type: integer
+          description: Total number of recommendations.
+        achievements:
+          type: object
+          properties:
+            total:
+              type: integer
+            highlighted:
+              type: array
+              items:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  path:
+                    type: string
+          description: Achievements related to the game.
+      required:
+        - steam_appid
+        - name
+        - developers
+        - publishers
+        - platforms
+        - price_overview
+        - demos
+        - genres
+        - recommendations
+        - achievements
+    gameResults:
       type: object
       required:
-      - todo
+      - matches
       properties:
-        todo:
-          type: string
-          description: The todo to add to the list.
-          required: true
-    deleteTodoRequest:
-      type: object
-      required:
-      - todo_idx
-      properties:
-        todo_idx:
-          type: integer
-          description: The index of the todo to delete.
+        matches:
+          type: array
+          description: Matching games for this search request
           required: true

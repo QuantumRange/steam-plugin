@@ -1,0 +1,305 @@
+{
+  "57690": {
+    "success": true,
+    "data": {
+      "type": "<content>",
+      "name": "<content>",
+      "steam_appid": 57690,
+      "required_age": 0,
+      "is_free": false,
+      "dlc": [
+        205630,
+        205636,
+        205635,
+        205637,
+        205638,
+        205634,
+        205633,
+        205632,
+        57697,
+        57695,
+        57696
+      ],
+      "detailed_description": "<content>",
+      "about_the_game": "<content>",
+      "short_description": "<content>",
+      "supported_languages": "<content>",
+      "reviews": "<content>",
+      "header_image": "<content>",
+      "website": "<content>",
+      "pc_requirements": {
+        "minimum": "<content>",
+        "recommended": "<content>"
+      },
+      "mac_requirements": {
+        "minimum": "<content>",
+        "recommended": "<content>"
+      },
+      "linux_requirements": [],
+      "developers": [
+        "Haemimont Games"
+      ],
+      "publishers": [
+        "Kalypso Media Digital"
+      ],
+      "demos": [
+        {
+          "appid": 57750,
+          "description": "<content>"
+        }
+      ],
+      "price_overview": {
+        "currency": "<content>",
+        "initial": 1499,
+        "final": 1499,
+        "discount_percent": 0,
+        "initial_formatted": "<content>",
+        "final_formatted": "<content>"
+      },
+      "packages": [
+        11400,
+        19282
+      ],
+      "package_groups": [
+        {
+          "name": "<content>",
+          "title": "<content>",
+          "description": "<content>",
+          "selection_text": "<content>",
+          "save_text": "<content>",
+          "display_type": 0,
+          "is_recurring_subscription": "<content>",
+          "subs": [
+            {
+              "packageid": 11400,
+              "percent_savings_text": "<content>",
+              "percent_savings": 0,
+              "option_text": "<content>",
+              "option_description": "<content>",
+              "can_get_free_license": "<content>",
+              "is_free_license": false,
+              "price_in_cents_with_discount": 1499
+            },
+            {
+              "packageid": 19282,
+              "percent_savings_text": "<content>",
+              "percent_savings": 0,
+              "option_text": "<content>",
+              "option_description": "<content>",
+              "can_get_free_license": "<content>",
+              "is_free_license": false,
+              "price_in_cents_with_discount": 2499
+            }
+          ]
+        }
+      ],
+      "platforms": {
+        "windows": true,
+        "mac": false,
+        "linux": false
+      },
+      "metacritic": {
+        "score": 78,
+        "url": "<content>"
+      },
+      "categories": [
+        {
+          "id": 2,
+          "description": "<content>"
+        },
+        {
+          "id": 22,
+          "description": "<content>"
+        },
+        {
+          "id": 29,
+          "description": "<content>"
+        }
+      ],
+      "genres": [
+        {
+          "id": "<content>",
+          "description": "<content>"
+        },
+        {
+          "id": "<content>",
+          "description": "<content>"
+        }
+      ],
+      "screenshots": [
+        {
+          "id": 0,
+          "path_thumbnail": "<content>",
+          "path_full": "<content>"
+        },
+        {
+          "id": 1,
+          "path_thumbnail": "<content>",
+          "path_full": "<content>"
+        },
+        {
+          "id": 2,
+          "path_thumbnail": "<content>",
+          "path_full": "<content>"
+        },
+        {
+          "id": 3,
+          "path_thumbnail": "<content>",
+          "path_full": "<content>"
+        },
+        {
+          "id": 4,
+          "path_thumbnail": "<content>",
+          "path_full": "<content>"
+        },
+        {
+          "id": 5,
+          "path_thumbnail": "<content>",
+          "path_full": "<content>"
+        },
+        {
+          "id": 6,
+          "path_thumbnail": "<content>",
+          "path_full": "<content>"
+        },
+        {
+          "id": 7,
+          "path_thumbnail": "<content>",
+          "path_full": "<content>"
+        },
+        {
+          "id": 8,
+          "path_thumbnail": "<content>",
+          "path_full": "<content>"
+        },
+        {
+          "id": 9,
+          "path_thumbnail": "<content>",
+          "path_full": "<content>"
+        },
+        {
+          "id": 10,
+          "path_thumbnail": "<content>",
+          "path_full": "<content>"
+        },
+        {
+          "id": 11,
+          "path_thumbnail": "<content>",
+          "path_full": "<content>"
+        },
+        {
+          "id": 12,
+          "path_thumbnail": "<content>",
+          "path_full": "<content>"
+        },
+        {
+          "id": 13,
+          "path_thumbnail": "<content>",
+          "path_full": "<content>"
+        },
+        {
+          "id": 14,
+          "path_thumbnail": "<content>",
+          "path_full": "<content>"
+        },
+        {
+          "id": 15,
+          "path_thumbnail": "<content>",
+          "path_full": "<content>"
+        }
+      ],
+      "movies": [
+        {
+          "id": 256831429,
+          "name": "<content>",
+          "thumbnail": "<content>",
+          "webm": {
+            "480": "<content>",
+            "max": "<content>"
+          },
+          "mp4": {
+            "480": "<content>",
+            "max": "<content>"
+          },
+          "highlight": true
+        },
+        {
+          "id": 2029441,
+          "name": "<content>",
+          "thumbnail": "<content>",
+          "webm": {
+            "480": "<content>",
+            "max": "<content>"
+          },
+          "mp4": {
+            "480": "<content>",
+            "max": "<content>"
+          },
+          "highlight": true
+        }
+      ],
+      "recommendations": {
+        "total": 7642
+      },
+      "achievements": {
+        "total": 70,
+        "highlighted": [
+          {
+            "name": "<content>",
+            "path": "<content>"
+          },
+          {
+            "name": "<content>",
+            "path": "<content>"
+          },
+          {
+            "name": "<content>",
+            "path": "<content>"
+          },
+          {
+            "name": "<content>",
+            "path": "<content>"
+          },
+          {
+            "name": "<content>",
+            "path": "<content>"
+          },
+          {
+            "name": "<content>",
+            "path": "<content>"
+          },
+          {
+            "name": "<content>",
+            "path": "<content>"
+          },
+          {
+            "name": "<content>",
+            "path": "<content>"
+          },
+          {
+            "name": "<content>",
+            "path": "<content>"
+          },
+          {
+            "name": "<content>",
+            "path": "<content>"
+          }
+        ]
+      },
+      "release_date": {
+        "coming_soon": false,
+        "date": "<content>"
+      },
+      "support_info": {
+        "url": "<content>",
+        "email": "<content>"
+      },
+      "background": "<content>",
+      "background_raw": "<content>",
+      "content_descriptors": {
+        "ids": [],
+        "notes": null
+      }
+    }
+  }
+}
