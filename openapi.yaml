@@ -100,6 +100,54 @@ components:
           items:
             type: string
           description: The publishers of the game.
+        categories:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+              description:
+                type: string
+          description: Categories of the game.
+        pc_requirements:
+          type: object
+          properties:
+            minimum:
+              type: string
+            recommended:
+              type: string
+          description: PC requirements for the game.
+        mac_requirements:
+          type: object
+          properties:
+            minimum:
+              type: string
+            recommended:
+              type: string
+          description: PC requirements for the game.
+        linux_requirements:
+          type: object
+          properties:
+            minimum:
+              type: string
+            recommended:
+              type: string
+          description: PC requirements for the game.
+        website:
+          type: string
+          description: The website of the game.
+        required_age:
+          type: string
+          description: The required age to play the game.
+        release_date:
+          type: object
+          properties:
+            coming_soon:
+              type: boolean
+            date:
+              type: string
+          description: The release date of the game.
         platforms:
           type: object
           properties:
@@ -110,28 +158,6 @@ components:
             linux:
               type: boolean
           description: The platforms the game is available on.
-        price_overview:
-          type: object
-          properties:
-            currency:
-              type: string
-            initial:
-              type: integer
-            final:
-              type: integer
-            discount_percent:
-              type: integer
-          description: Overview of the game's price.
-        demos:
-          type: array
-          items:
-            type: object
-            properties:
-              appid:
-                type: integer
-              description:
-                type: string
-          description: Available demos of the game.
         genres:
           type: array
           items:
@@ -160,17 +186,18 @@ components:
                 properties:
                   name:
                     type: string
-                  path:
-                    type: string
           description: Achievements related to the game.
+        dlc:
+          type: array
+          items:
+            type: integer
+            description: Steam DLC game id
       required:
         - steam_appid
         - name
         - developers
         - publishers
         - platforms
-        - price_overview
-        - demos
         - genres
         - recommendations
         - achievements
